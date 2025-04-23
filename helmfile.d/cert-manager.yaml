@@ -1,6 +1,8 @@
 repositories:
   - name: jetstack          # Name used to reference this repository
     url: https://charts.jetstack.io # Official Cert Manager Helm chart repository
+  - name: adfinis
+    url: https://charts.adfinis.com
 
 # Define the releases (deployments)
 releases:
@@ -12,4 +14,12 @@ releases:
     createNamespace: true          # Ask Helmfile/Helm to create the namespace if it doesn't exist (still good practice to create it manually first)
     values:
       - installCRDs: true
+  - name: cert-manager-issuers             # Name of the Helm release (visible in 'helm list')
+    namespace: cert-manager        # Target namespace for installation
+    chart: adfinis/cert-manager-issuers   # Chart reference: <repository_name>/<chart_name>
+    version: 0.3.0             # <--- IMPORTANT: Pin to a specific chart version! Check for the latest stable version.
+    createNamespace: true          # Ask Helmfile/Helm to create the namespace if it doesn't exist (still good practice to create it manually first)
+    needs: 
+      - cert-manager
+
 
