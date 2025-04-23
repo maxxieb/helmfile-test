@@ -21,5 +21,7 @@ releases:
     createNamespace: true          # Ask Helmfile/Helm to create the namespace if it doesn't exist (still good practice to create it manually first)
     needs: 
       - cert-manager
+    values:
+      - config/cert-manager-issuer/values.yaml      
 
 
