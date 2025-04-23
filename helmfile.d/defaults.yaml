@@ -1,8 +1,8 @@
 # These default values can be overridden per environment in config/<env>.yaml files
 
-chart_version: "v1.17.1"
+chart_version: "v1.0.3"
 
-cert_manager_issuers_chart_version: "0.3.0"
+cert_manager_issuers_chart_version: "0.2.3"
 
 limit_cpu: "200m"
 

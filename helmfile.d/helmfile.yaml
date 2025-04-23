@@ -1,5 +1,5 @@
 bases:
-- values/cert-manager/environments.yaml
+- environments.yaml
 ---
 repositories:
   # Add the Jetstack Helm repository
@@ -36,7 +36,7 @@ releases:
   hooks:
   - events: ["presync"]
     showlogs: true
-    command: "./values/cert-manager/cert-manager-crd"
+    command: "./cert-manager-crd"
     args:
     - "upgrade"
     - {{ .Values.chart_version | quote }}
@@ -154,4 +154,3 @@ releases:
             - dns01:
                 route53:
                   region: {{ .Values.dns_region | quote }}
-
