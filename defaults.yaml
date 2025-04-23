@@ -4,6 +4,8 @@ chart_version: "v1.0.3"
 
 installed: true
 
+account_number: "1234567890"
+
 cert_manager_issuers_chart_version: "0.2.3"
 
 limit_cpu: "200m"
