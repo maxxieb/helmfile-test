@@ -4,6 +4,8 @@ chart_version: "v1.0.3"
 
 environment: "default"
 
+stage: "test"
+
 installed: true
 
 namespace: "cert-manager"
