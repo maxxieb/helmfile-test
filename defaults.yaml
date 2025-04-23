@@ -1,6 +1,6 @@
 # These default values can be overridden per environment in config/<env>.yaml files
 
-chart_version: "v1.0.3"
+chart_version: "v1.17.3"
 
 support_email_template: "test"
 
@@ -16,7 +16,7 @@ namespace: "cert-manager"
 
 account_number: "1234567890"
 
-cert_manager_issuers_chart_version: "0.2.3"
+cert_manager_issuers_chart_version: "0.3.0"
 
 limit_cpu: "200m"
 
