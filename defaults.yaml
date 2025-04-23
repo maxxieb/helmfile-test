@@ -2,6 +2,8 @@
 
 chart_version: "v1.0.3"
 
+support_email_template: false
+
 environment: "default"
 
 stage: "test"
