@@ -2,7 +2,7 @@
 
 chart_version: "v1.0.3"
 
-support_email_template: false
+support_email_template: "test"
 
 environment: "default"
 
