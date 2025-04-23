@@ -6,6 +6,8 @@ support_email_template: "test"
 
 environment: "default"
 
+dns_region: "us-west-2"
+
 stage: "test"
 
 installed: true
