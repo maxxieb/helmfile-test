@@ -1,0 +1,15 @@
+repositories:
+  - name: jetstack          # Name used to reference this repository
+    url: https://charts.jetstack.io # Official Cert Manager Helm chart repository
+
+# Define the releases (deployments)
+releases:
+  # Release definition for Cert Manager
+  - name: cert-manager             # Name of the Helm release (visible in 'helm list')
+    namespace: cert-manager        # Target namespace for installation
+    chart: jetstack/cert-manager   # Chart reference: <repository_name>/<chart_name>
+    version: v1.17.3             # <--- IMPORTANT: Pin to a specific chart version! Check for the latest stable version.
+    createNamespace: true          # Ask Helmfile/Helm to create the namespace if it doesn't exist (still good practice to create it manually first)
+    values:
+      - installCRDs: true
+
