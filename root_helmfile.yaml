@@ -1,0 +1,29 @@
+environments:
+  dev-main: {}
+  devops-main: {}
+  staging-main: {}
+  prod-main: {}
+  # old EKS
+  staging: {}
+  production: {}
+
+---
+
+helmDefaults:
+  wait: true
+  timeout: 600
+  historyMax: 4
+  createNamespace: true
+
+templates:
+  default:
+    namespace: '{{`{{ .Release.Name }}`}}'
+    missingFileHandler: Warn
+    labels:
+      name: '{{`{{ .Release.Name }}`}}'
+    values:
+      - config/{{`{{ .Release.Name }}`}}/values.yaml
+      - config/{{`{{ .Release.Name }}`}}/{{`{{ .Environment.Name }}`}}.yaml
+    secrets:
+      - config/{{`{{ .Release.Name }}`}}/secrets.yaml
+      - config/{{`{{ .Release.Name }}`}}/{{`{{ .Environment.Name }}`}}-secrets.yaml
